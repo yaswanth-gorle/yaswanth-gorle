@@ -17,9 +17,10 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg
 
-      - name: Push snake
+      - name: Push snake animation
         uses: crazy-max/ghaction-github-pages@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           target_branch: output
           build_dir: dist
